@@ -1,0 +1,12 @@
+So , using jQuery Make a replica of the game SIMON 
+
+The game will firstly prompt the user to click the start button to the play the game 
+
+when the user clicks start, it will show level 1 and show a pattern
+    after showing the pattern the title will change to "level X - (Your turn!)"
+
+after completing a level , it will add a point depending on how many squares were clicked 
+    so by completing level 2 , it will have a point system of 3 , going up by increments of "!"
+
+so by the time the loser fails, their highscore is displayed and option to retry/play again appears
+
