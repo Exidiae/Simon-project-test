@@ -18,3 +18,8 @@ so what now do i have to do?
 - make it repeat infintely until losing (using a while loop most likely)
 - make it generate a new number everytime in the while loop so it has something extra to go on
 - make it record the score and level to inrease perhaps using append
+
+
+* so as the game goes on it needs to add 1 more per try the user does. *
+
+so a while loop that increments the LEVELS and the SCORES BY 1 IS NEEDED 
