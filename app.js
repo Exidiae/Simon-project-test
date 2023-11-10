@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     let score = 0;
     let level = 1;
@@ -17,6 +16,8 @@ $(document).ready(function () {
         element.animate({ opacity: 1 }, 250);
     }
 
+    //----------------------------------------------------------------------------------------
+
     function playGame() {
         let sequenceIndex = 0;
 
@@ -26,31 +27,26 @@ $(document).ready(function () {
                 sequenceIndex++;
                 setTimeout(flashNext, 1000);
             } else {
-
-                $(".Button").click(function () {
+                userClicks = 0;
+                $(".Button").off('click').on('click', function () {
                     const clickedButton = $(this);
                     ButtonFlash(clickedButton);
-
-                    if (clickedButton[0] !== sequence[userClicks][0]) {
+                    if (clickedButton[0] === sequence[userClicks][0]) {
+                        userClicks++;
+                        if (userClicks === sequence.length) {
+                            score++;
+                            $(".Score").text("Score: " + score);
+                            level++;
+                            $(".Level").text("Level: " + level);
+                            setTimeout(playNextLevel, 1000);
+                        }
+                    } else {
                         alert("Game over! Score: " + score);
-
                         score = 0;
-                        level = 1;
+                        level = 0;
                         sequence = [];
-                        userClicks = 0;
                         $(".Score").text("Score: " + score);
                         $(".Level").text("Level: " + level);
-                        return;
-                    }
-                    userClicks++;
-
-                    if (userClicks === sequence.length) {
-                        score++;
-                        level++;
-                        userClicks = 0;
-                        $(".Score").text("Score: " + score);
-                        $(".Level").text("Level: " + level);
-                        sequenceIndex = 0;
                         setTimeout(playNextLevel, 1000);
                     }
                 });
@@ -58,7 +54,10 @@ $(document).ready(function () {
         }
 
         function playNextLevel() {
-            sequence.push(ChoosingAButton());
+            sequence = [];
+            for (let i = 0; i < level; i++) {
+                sequence.push(ChoosingAButton());
+            }
             flashNext();
         }
 
@@ -73,4 +72,3 @@ $(document).ready(function () {
         playGame();
     });
 });
-
