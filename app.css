@@ -6,22 +6,22 @@ h1 {
     color: white;
 }
 
-.Red_Button {
+#Red_Button {
     color: rgba(255, 0, 0, 0);
     background-color: red;
 }
 
-.Blue_Button {
+#Blue_Button {
     color: rgba(255, 0, 0, 0);
     background-color: blue;
 }
 
-.Green_Button {
+#Green_Button {
     color: rgba(255, 0, 0, 0);
     background-color: green;
 }
 
-.Yellow_Button {
+#Yellow_Button {
     color: rgba(255, 0, 0, 0);
     background-color: yellow;
 }

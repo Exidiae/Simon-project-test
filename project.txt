@@ -10,3 +10,11 @@ after completing a level , it will add a point depending on how many squares wer
 
 so by the time the loser fails, their highscore is displayed and option to retry/play again appears
 
+---------------------------------------
+
+so far i have up to the face that it flashes and detects what flashed 
+so what now do i have to do?
+
+- make it repeat infintely until losing (using a while loop most likely)
+- make it generate a new number everytime in the while loop so it has something extra to go on
+- make it record the score and level to inrease perhaps using append
