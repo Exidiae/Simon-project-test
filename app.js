@@ -19,49 +19,15 @@ $(document).ready(function () {
     });
 
     $("button.Start_Button").click(function () {
-        let GameOver = false;
-        while GameOver == false{
+        const randomElement = ChoosingAButton();
+        ButtonFlash(randomElement);
 
-            const randomElement = ChoosingAButton();
-            ButtonFlash(randomElement);
-
-            if ($(randomElement).click(function () {
-                alert("hello");
-            }));
-            else {
-                alert("bye")
-            }
+        if ($(randomElement).click(function () {
+            alert("hello");
+        }));
+        else {
+            alert("bye")
         }
     });
 });
 
-
-
-// $("button.Start_Button").click(function () {
-//     let GameOver = false
-
-//     const randomElement = ChoosingAButton();
-//     ButtonFlash(randomElement);
-
-//     if ($(randomElement).click(function () {
-//         alert("hello");
-//     }));
-//     else () {
-//         alert("bye")
-//     }
-// });
-
-// randomElement.click(function () {
-//     alert("Hello");
-// });
-
-// elements.not(randomElement).click(function () {
-//     alert("Bye");
-// });
-
-// elements.click(function () {
-//     if ($(this).is(randomElement)) {
-//         alert("Hello");
-//     } else {
-//         alert("Bye");
-//     }
