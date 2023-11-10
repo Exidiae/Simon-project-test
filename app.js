@@ -18,19 +18,19 @@ $(document).ready(function () {
         $("button.Start_Button, .Start_Button, .Start, .Title").hide();
     });
 
-    let GameOver = false;
-
     $("button.Start_Button").click(function () {
-        let GameOver = false
+        let GameOver = false;
+        while GameOver == false{
 
-        const randomElement = ChoosingAButton();
-        ButtonFlash(randomElement);
+            const randomElement = ChoosingAButton();
+            ButtonFlash(randomElement);
 
-        if ($(randomElement).click(function () {
-            alert("hello");
-        }));
-        else {
-            alert("bye")
+            if ($(randomElement).click(function () {
+                alert("hello");
+            }));
+            else {
+                alert("bye")
+            }
         }
     });
 });
