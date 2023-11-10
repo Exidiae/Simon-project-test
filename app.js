@@ -17,7 +17,6 @@ $(document).ready(function () {
     }
 
     //----------------------------------------------------------------------------------------
-
     function playGame() {
         let sequenceIndex = 0;
 
