@@ -1,8 +1,6 @@
 $(document).ready(function () {
     let level = 1;
     let sequence = [];
-    let userClicks = [];
-    let inProgress = false;
     let Score = 0
 
     $("#Red_Button, #Blue_Button, #Green_Button, #Yellow_Button, .Level, .Score").hide();
