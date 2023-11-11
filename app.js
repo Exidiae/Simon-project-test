@@ -50,10 +50,25 @@ $(document).ready(function () {
         $("button.Start_Button, .Start_Button, .Start, .Title").show();
     }
 
-    function playSound(name) {
-        const audio = new Audio("sounds/" + name + ".mp3");
+    function failure(name, volume) {
+        const audio = new Audio("sounds/wrong.mp3");
+        audio.volume = 0.3
         audio.play();
     }
+
+    const soundFiles = {
+        "Red_Button": "red.mp3",
+        "Blue_Button": "blue.mp3",
+        "Green_Button": "green.mp3",
+        "Yellow_Button": "yellow.mp3",
+    };
+
+    function playSound(name, volume) {
+        const audio = new Audio("sounds/" + name);
+        audio.volume = 0.4;
+        audio.play();
+    }
+
 
     $("button.Start_Button").click(function () {
         $("button#Red_Button, button#Blue_Button, button#Green_Button, button#Yellow_Button, .Level, .Score").toggle();
@@ -73,14 +88,26 @@ $(document).ready(function () {
                     increaseScore();
                     addNextButtonToSequence();
                     increaseLevel()
+                    playSound()
                     currentStep = 0;
                 }
             } else {
                 resetGame();
-                alert("You lose!");
+                failure();
+                alert("you lose!")
             }
         });
     });
 
+
+    function playSound(name, volume) {
+        const audio = new Audio("sounds/blue.mp3");
+        audio.volume = 0.4
+        audio.play();
+    }
+
+    $("#playSoundButton").click(function () {
+        playSound("soundfile");
+    });
 });
 
