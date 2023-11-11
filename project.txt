@@ -41,3 +41,16 @@ so 1 light , then add to sequence
  only one flashing is the new one
 
 the user clicks get added and it progresses on 
+
+
+So given this code that flashed a button that the user can click on
+write a segment of code that gradually increases the number of buttons the user must click on by 1 
+and doing so by flashing a new random button:
+
+for example:
+lvl 1 = flashes green, so the user will click green
+lvl 2 = flashes yellow ONLY, so the user will click green and yellow to progresses
+lvl 3 = flashes blue , the user must click green, yellow and blue
+
+notice the order , the user must click the buttons sequentially 
+if the user fails to, or clicks a button thats not in the right sequence, alert "you lose" to the user 
