@@ -1,3 +1,35 @@
 body {
-    color: rebeccapurple;
+    background-color: rgb(19, 55, 147);
+}
+
+h1 {
+    color: white;
+}
+
+#Red_Button {
+    color: rgba(255, 0, 0, 0);
+    background-color: red;
+}
+
+#Blue_Button {
+    color: rgba(255, 0, 0, 0);
+    background-color: blue;
+}
+
+#Green_Button {
+    color: rgba(255, 0, 0, 0);
+    background-color: green;
+}
+
+#Yellow_Button {
+    color: rgba(255, 0, 0, 0);
+    background-color: yellow;
+}
+
+.Level {
+    color: white;
+}
+
+.Score {
+    color: white;
 }
