@@ -45,10 +45,15 @@ $(document).ready(function () {
     function resetGame() {
         sequence = [];
         Score = 0;
+        level = 1;
         $("button#Red_Button, button#Blue_Button, button#Green_Button, button#Yellow_Button, .Level, .Score").hide();
         $("button.Start_Button, .Start_Button, .Start, .Title").show();
     }
 
+    function playSound(name) {
+        const audio = new Audio("sounds/" + name + ".mp3");
+        audio.play();
+    }
 
     $("button.Start_Button").click(function () {
         $("button#Red_Button, button#Blue_Button, button#Green_Button, button#Yellow_Button, .Level, .Score").toggle();
@@ -71,8 +76,8 @@ $(document).ready(function () {
                     currentStep = 0;
                 }
             } else {
-                alert("You lose!");
                 resetGame();
+                alert("You lose!");
             }
         });
     });
