@@ -34,27 +34,50 @@ $(document).ready(function () {
         console.log(Score);
     }
 
+    function increaseLevel() {
+        level++
+        $("#LevelValue").text(level)
+    }
     function addNextButtonToSequence() {
         const randomElement = ChoosingAButton();
         ButtonFlash(randomElement);
         sequence.push(randomElement);
     }
-    //-------------------------------------------------------------
 
-    //-------------------------------------------------------------
+    function resetGame() {
+        sequence = [];
+        Score = 0;
+        $("button#Red_Button, button#Blue_Button, button#Green_Button, button#Yellow_Button, .Level, .Score").hide();
+        $("button.Start_Button, .Start_Button, .Start, .Title").show();
+    }
+
 
     $("button.Start_Button").click(function () {
         $("button#Red_Button, button#Blue_Button, button#Green_Button, button#Yellow_Button, .Level, .Score").toggle();
         $("button.Start_Button, .Start_Button, .Start, .Title").hide();
 
-        const randomElement = ChoosingAButton();
-        ButtonFlash(randomElement);
+        addNextButtonToSequence();
 
-        randomElement.click(function () {
-            increaseScore();
-            addNextButtonToSequence();
+        let currentStep = 0;
+
+        $(".Button").off("click").on("click", function () {
+            const element = $(this);
+
+            if (element.is(sequence[currentStep])) {
+                currentStep++;
+
+                if (currentStep === sequence.length) {
+                    increaseScore();
+                    addNextButtonToSequence();
+                    increaseLevel()
+                    currentStep = 0;
+                }
+            } else {
+                alert("You lose!");
+                resetGame();
+            }
         });
-
     });
+
 });
 

@@ -54,3 +54,13 @@ lvl 3 = flashes blue , the user must click green, yellow and blue
 
 notice the order , the user must click the buttons sequentially 
 if the user fails to, or clicks a button thats not in the right sequence, alert "you lose" to the user 
+
+ok so to break it back up into parts:
+
+the button is working and it does add a score, whats the issue?
+1) it doesnt reset after the first level 
+2) the user cannot lose 
+3) the user can press the first button repeatedly and it will add 1 to the level and score as much as the use clicks it
+
+goal:
+the user clicks the respective button in the se
