@@ -23,3 +23,21 @@ so what now do i have to do?
 * so as the game goes on it needs to add 1 more per try the user does. *
 
 so a while loop that increments the LEVELS and the SCORES BY 1 IS NEEDED 
+
+--------------------------------------------
+
+XXXXXXXXXXXXX JS TESTING ZONE XXXXXXXXXXXXX  
+
+--------------------------------------------
+
+ok the issue is , the SIMON game must 
+
+flash a light --> increase lvl by 1 and score by user clicks ----> then it will add the first flashed light into a sequence --->
+so the sequence increases per flashed light 
+
+so 1 light , then add to sequence 
+ 2 lights with a new one, then that gets added
+
+ only one flashing is the new one
+
+the user clicks get added and it progresses on 
