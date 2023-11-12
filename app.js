@@ -47,7 +47,7 @@ $(document).ready(function () {
         Score = 0;
         level = 1;
         $("button#Red_Button, button#Blue_Button, button#Green_Button, button#Yellow_Button, .Level, .Score").hide();
-        $("button.Start_Button, .Start_Button, .Start, .Title").show();
+        $("button.Start_Button, .Start_Button, .Start, .text").show();
     }
 
     function failure(name, volume) {
@@ -72,7 +72,7 @@ $(document).ready(function () {
 
     $("button.Start_Button").click(function () {
         $("button#Red_Button, button#Blue_Button, button#Green_Button, button#Yellow_Button, .Level, .Score").toggle();
-        $("button.Start_Button, .Start_Button, .Start, .Title").hide();
+        $("button.Start_Button, .Start_Button, .Start, .text").hide();
 
         addNextButtonToSequence();
 
@@ -110,4 +110,6 @@ $(document).ready(function () {
         playSound("soundfile");
     });
 });
+
+
 
