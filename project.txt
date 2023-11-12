@@ -1,0 +1,127 @@
+So , using jQuery Make a replica of the game SIMON 
+
+The game will firstly prompt the user to click the start button to the play the game 
+
+when the user clicks start, it will show level 1 and show a pattern
+    after showing the pattern the title will change to "level X - (Your turn!)"
+
+after completing a level , it will add a point depending on how many squares were clicked 
+    so by completing level 2 , it will have a point system of 3 , going up by increments of "!"
+
+so by the time the loser fails, their highscore is displayed and option to retry/play again appears
+
+---------------------------------------
+
+so far i have up to the face that it flashes and detects what flashed 
+so what now do i have to do?
+
+- make it repeat infintely until losing (using a while loop most likely)
+- make it generate a new number everytime in the while loop so it has something extra to go on
+- make it record the score and level to inrease perhaps using append
+
+
+* so as the game goes on it needs to add 1 more per try the user does. *
+
+so a while loop that increments the LEVELS and the SCORES BY 1 IS NEEDED 
+
+--------------------------------------------
+
+XXXXXXXXXXXXX JS TESTING ZONE XXXXXXXXXXXXX  
+
+--------------------------------------------
+
+ok the issue is , the SIMON game must 
+
+flash a light --> increase lvl by 1 and score by user clicks ----> then it will add the first flashed light into a sequence --->
+so the sequence increases per flashed light 
+
+so 1 light , then add to sequence 
+ 2 lights with a new one, then that gets added
+
+ only one flashing is the new one
+
+the user clicks get added and it progresses on 
+
+
+So given this code that flashed a button that the user can click on
+write a segment of code that gradually increases the number of buttons the user must click on by 1 
+and doing so by flashing a new random button:
+
+for example:
+lvl 1 = flashes green, so the user will click green
+lvl 2 = flashes yellow ONLY, so the user will click green and yellow to progresses
+lvl 3 = flashes blue , the user must click green, yellow and blue
+
+notice the order , the user must click the buttons sequentially 
+if the user fails to, or clicks a button thats not in the right sequence, alert "you lose" to the user 
+
+ok so to break it back up into parts:
+
+the button is working and it does add a score, whats the issue?
+1) it doesnt reset after the first level 
+2) the user cannot lose 
+3) the user can press the first button repeatedly and it will add 1 to the level and score as much as the use clicks it
+
+goal:
+the user clicks the respective button in the se
+
+--------------------
+ok so now javascript wise, the final thing is to just add the sound:
+the sound files are all in the sounds folder and now the only thing to do is just assign them to their respective blocks
+
+blue.mp3
+green.mp3
+red.mp3 
+yellow.mp3
+wrong.mp3
+
+function ChoosingAButton() {
+        const elements = $("#Red_Button, #Blue_Button, #Green_Button, #Yellow_Button");
+        const randomIndex = Math.floor(Math.random() * elements.length);
+        const randomElement = elements.eq(randomIndex);
+        return randomElement;
+    }
+
+    function ButtonFlash(element) {
+        element.animate({ opacity: 0.4 }, 350);
+        element.animate({ opacity: 1 }, 250);
+    }
+
+$("button.Start_Button").click(function () {
+        $("button#Red_Button, button#Blue_Button, button#Green_Button, button#Yellow_Button, .Level, .Score").toggle();
+        $("button.Start_Button, .Start_Button, .Start, .Title").hide();
+
+        addNextButtonToSequence();
+
+        let currentStep = 0;
+
+        $(".Button").off("click").on("click", function () {
+            const element = $(this);
+
+            if (element.is(sequence[currentStep])) {
+                currentStep++;
+
+                if (currentStep === sequence.length) {
+                    increaseScore();
+                    addNextButtonToSequence();
+                    increaseLevel()
+                    currentStep = 0;
+                }
+            } else {
+                resetGame();
+                alert("You lose!");
+            }
+        });
+
+so what i want you to do is , given the above information and the mp3 files,
+assign a sound to each button and its respective ID so Red_Button gets red.mp3, Blue_Button gets blue.mp3 etc.
+
+so when the button flashes , or is clicked , its respective sound is played. 
+
+the sound functions should look something similar to this:
+
+function failure(name, volume) {
+        const audio = new Audio("sounds/wrong.mp3");
+        audio.volume = 0.3
+        audio.play();
+    }

@@ -1,3 +1,208 @@
 body {
-    color: rebeccapurple;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
 }
+
+h1 {
+    color: white;
+}
+
+
+/* ------------------------------------------ BUTTONS ------------------------------------------ */
+#Red_Button {
+    color: rgba(255, 0, 0, 0);
+    background-color: red;
+}
+
+#Blue_Button {
+    color: rgba(255, 0, 0, 0);
+    background-color: blue;
+}
+
+#Green_Button {
+    color: rgba(255, 0, 0, 0);
+    background-color: green;
+}
+
+#Yellow_Button {
+    color: rgba(255, 0, 0, 0);
+    background-color: yellow;
+}
+
+/* ------------------------------------------ In game ------------------------------------------ */
+.Level {
+    color: white;
+}
+
+.Score {
+    color: white;
+}
+
+/* ------------------------------------------ Container W/title,start and button to begin ------------------------------------------ */
+
+.container {
+    font-family: 'VT323', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 80vh;
+}
+
+/* ------------------------------------------ TITLE ------------------------------------------ */
+.Title {
+    background-color: black;
+    color: white;
+    font-size: 90px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    user-select: none;
+}
+
+.neon {
+    position: relative;
+    overflow: hidden;
+    filter: brightness(200%);
+}
+
+.text {
+    background-color: black;
+    color: white;
+    font-size: 180px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    user-select: none;
+}
+
+.text::before {
+    content: attr(data-text);
+    position: absolute;
+    color: white;
+    filter: blur(0.02em);
+    mix-blend-mode: difference;
+}
+
+.gradient {
+    position: absolute;
+    background: linear-gradient(45deg, #777777, #FFFFFF, #777777, #FFFFFF, #777777);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    mix-blend-mode: multiply;
+}
+
+.spotlight {
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle,
+            white,
+            transparent 25%) center / 25% 25%,
+        radial-gradient(circle,
+            white,
+            black 25%) center / 12.5% 12.5%;
+    animation: light 5s linear infinite;
+    mix-blend-mode: color-dodge;
+}
+
+@keyframes light {
+    to {
+        transform: translate(50%, 50%);
+    }
+}
+
+/* ------------------------------------------ START TEXT ------------------------------------------ */
+
+
+.Start {
+    margin-bottom: 90px;
+    font-size: 60px;
+    color: #fff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    background: #000;
+    padding: 10px;
+    text-shadow:
+        2px 2px 0 #00f,
+        -2px -2px 0 #ff0;
+    animation: neonBlink 2s ease-in-out infinite;
+}
+
+@keyframes neonBlink {
+    0% {
+        text-shadow:
+            2px 2px 0 #00f,
+            -2px -2px 0 #ff0;
+    }
+
+    25% {
+        text-shadow:
+            -3px 1px 0 #00f,
+            1px -3px 0 #ff0;
+    }
+
+    50% {
+        text-shadow:
+            1px -3px 0 #00f,
+            -3px 1px 0 #ff0;
+    }
+
+    75% {
+        text-shadow:
+            -2px -2px 0 #00f,
+            2px 2px 0 #ff0;
+    }
+
+    100% {
+        text-shadow:
+            2px 2px 0 #00f,
+            -2px -2px 0 #ff0;
+    }
+}
+
+
+
+
+/* ------------------------------------------ START BUTTON ------------------------------------------ */
+
+.Start_Button {
+    text-decoration: none;
+    display: inline-block;
+    background: rgba(70, 131, 180, 0);
+    padding: 1em 3em;
+    color: white;
+    outline: 3px solid white;
+    transition: all 0.3s ease-in-out;
+    /* Adjust transition timing */
+    margin-bottom: 100px;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.Start_Button:hover {
+    background-color: #03e8f400;
+    color: #feffff;
+    box-shadow: 0px 0px 10px #feffff, 0px 0px 15px #feffff, 0px 0px 15px #feffff, 0px 0px 30px #feffff;
+    transform: scale(1.05);
+}
+
+
+/* ------------------------------------------ XXX ------------------------------------------ */
+/* ----------------------------------------- GAME ------------------------------------------ */
+/* ------------------------------------------ XXX ------------------------------------------ */
