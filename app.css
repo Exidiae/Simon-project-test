@@ -14,17 +14,14 @@ h1 {
 }
 
 
-
-/* ------------------------------------------ BUTTONS ------------------------------------------ */
+/* ------------------------------------------ GAME (BTNS + LVL + SCORE) ------------------------------------------ */
 
 .text-container {
     text-align: center;
     position: absolute;
     top: 10px;
-    /* Adjust the top value to add some spacing */
     width: 100%;
 }
-
 
 .Level,
 .Score {
@@ -32,15 +29,10 @@ h1 {
     display: block;
     color: white;
     font-size: 80px;
-    /* Increase the font size as needed */
     margin: 20px 0;
     letter-spacing: 10px;
-    /* Add margin to create spacing */
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-    /* Adjust the values for the glow effect */
-
 }
-
 
 .button-container {
     display: flex;
@@ -59,21 +51,15 @@ h1 {
 #Green_Button,
 #Yellow_Button {
     width: 150px;
-    /* Adjust the button width as needed */
     height: 150px;
-    /* Adjust the button height as needed */
     margin: 10px;
-    /* Adjust the margin for spacing */
     border: 2px solid white;
     cursor: pointer;
     text-align: center;
     padding: 0;
     line-height: 100px;
-    /* Vertically center text within the button */
     background-color: transparent;
-    /* Set the background color to transparent */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-    /* Adjust the values for the glow effect */
 }
 
 #Red_Button {
@@ -228,8 +214,6 @@ h1 {
     }
 }
 
-
-
 /* ------------------------------------------ START BUTTON ------------------------------------------ */
 
 .Start_Button {
@@ -249,16 +233,9 @@ h1 {
     cursor: pointer;
 }
 
-
-
 .Start_Button:hover {
     background-color: #03e8f400;
     color: #feffff;
     box-shadow: 0px 0px 10px #feffff, 0px 0px 15px #feffff, 0px 0px 15px #feffff, 0px 0px 30px #feffff;
     transform: scale(1.05);
 }
-
-
-/* ------------------------------------------ XXX ------------------------------------------ */
-/* ----------------------------------------- GAME ------------------------------------------ */
-/* ------------------------------------------ XXX ------------------------------------------ */
