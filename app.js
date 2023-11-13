@@ -114,6 +114,7 @@ $(document).ready(function () {
                 resetGame();
                 Score = 0;
                 level = 1;
+                location.reload();
             });
         });
     });
