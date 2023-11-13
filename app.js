@@ -26,6 +26,15 @@ $(document).ready(function () {
         inProgress = true;
     }
 
+    function toggleFlash() {
+        if (flashing) {
+            $('body').css('background-color', 'black');
+        } else {
+            $('body').css('background-color', 'red');
+        }
+        flashing = !flashing;
+    }
+
     function increaseScore() {
         Score++;
         $("#scoreValue").text(Score);
