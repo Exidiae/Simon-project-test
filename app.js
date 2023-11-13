@@ -3,7 +3,7 @@ $(document).ready(function () {
     let sequence = [];
     let Score = 0
 
-    $("#Red_Button, #Blue_Button, #Green_Button, #Yellow_Button, .Level, .Score").hide();
+    $("#Red_Button, #Blue_Button, #Green_Button, #Yellow_Button, .Level, .Score, .Lose, .Retry, .Retry_BTN").hide();
 
     function ChoosingAButton() {
         const elements = $("#Red_Button, #Blue_Button, #Green_Button, #Yellow_Button");
@@ -27,12 +27,12 @@ $(document).ready(function () {
     }
 
     function toggleFlash() {
-        if (flashing) {
+        $('body').css('background-color', 'red');
+        setTimeout(function () {
             $('body').css('background-color', 'black');
-        } else {
-            $('body').css('background-color', 'red');
-        }
-        flashing = !flashing;
+        }, 300);
+        Score = 0;
+        level = 1;
     }
 
     function increaseScore() {
@@ -55,8 +55,9 @@ $(document).ready(function () {
         sequence = [];
         Score = 0;
         level = 1;
-        $("button#Red_Button, button#Blue_Button, button#Green_Button, button#Yellow_Button, .Level, .Score").hide();
+        $("button#Red_Button, button#Blue_Button, button#Green_Button, button#Yellow_Button, .Level, .Score, .Retry, .Retry_BTN, .Lose").hide();
         $("button.Start_Button, .Start_Button, .Start, .text").show();
+        $('#Red_Button, #Blue_Button, #Green_Button, #Yellow_Button').prop('disabled', false);
     }
 
     function failure(name, volume) {
@@ -101,13 +102,21 @@ $(document).ready(function () {
                     currentStep = 0;
                 }
             } else {
-                resetGame();
                 failure();
-                alert("you lose!")
+                toggleFlash();
+                $(".Level, .Score").hide()
+                $(".Lose, .Retry_BTN, .Retry").toggle()
+                $('#Red_Button, #Blue_Button, #Green_Button, #Yellow_Button').prop('disabled', true);
+
             }
+
+            $(".Retry_BTN").click(function () {
+                resetGame();
+                Score = 0;
+                level = 1;
+            });
         });
     });
-
 
     function playSound(name, volume) {
         const audio = new Audio("sounds/blue.mp3");

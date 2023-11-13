@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="body">
 
     <div class="container">
         <div class="neon">
@@ -29,6 +29,7 @@
     <div class="text-container">
         <h2 class="Level">Level: <span id="LevelValue">1</span></h2>
         <h2 class="Score">Score: <span id="scoreValue">0</span></h2>
+        <h2 class="Lose">You Lose!</h2>
     </div>
     <br>
 
@@ -43,8 +44,12 @@
             <button class="Button" id="Yellow_Button">‎‎‎‎‎‎‎‎ㅤ</button>
         </div>
     </div>
+    <br>
 
-
+    <div class="GameOver">
+        <h2 class="Retry">PlayAgain?</h2>
+        <button class="Retry_BTN">Yes</button>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="app.js"></script>
 

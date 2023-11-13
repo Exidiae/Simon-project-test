@@ -24,7 +24,9 @@ h1 {
 }
 
 .Level,
-.Score {
+.Score,
+.Lose,
+.Retry {
     font-family: 'VT323', monospace;
     display: block;
     color: white;
@@ -32,6 +34,13 @@ h1 {
     margin: 20px 0;
     letter-spacing: 10px;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.Lose {
+    position: relative;
+    top: 60px;
+    left: 5px;
+    animation: neonBlink 2s ease-in-out infinite;
 }
 
 .button-container {
@@ -50,6 +59,7 @@ h1 {
 #Blue_Button,
 #Green_Button,
 #Yellow_Button {
+    bottom: 20px;
     width: 150px;
     height: 150px;
     margin: 10px;
@@ -80,6 +90,46 @@ h1 {
 #Yellow_Button {
     background-color: yellow;
     color: white;
+}
+
+
+.GameOver {
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+}
+
+.Retry {
+    position: relative;
+    top: 560px;
+    left: 5px;
+    animation: neonBlink 2s ease-in infinite;
+}
+
+.Retry_BTN {
+    position: relative;
+    top: 560px;
+    left: 5px;
+    text-decoration: none;
+    display: inline-block;
+    background: rgba(70, 131, 180, 0);
+    padding: 1em 2em;
+    color: white;
+    outline: 3px solid white;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 100px;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.Retry_BTN:hover {
+    background-color: #03e8f400;
+    color: #feffff;
+    box-shadow: 0px 0px 10px #feffff, 0px 0px 15px #feffff, 0px 0px 15px #feffff, 0px 0px 30px #feffff;
+    transform: scale(1.05);
 }
 
 
